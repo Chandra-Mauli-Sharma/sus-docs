@@ -1,16 +1,14 @@
 'use client';
 
 import Editor from "@/component/editor";
-import {useState} from "react";
-import {OutputData} from "@editorjs/editorjs";
+import MenuBar from "@/component/menuBar";
 
 export default function Home() {
-    const [content, setContent] = useState<OutputData | null>(null);
     return(
-        <Editor
-            data={content}
-            onChange={(e) => setContent(e)}
-            holder="editor_create"
-        />
+        <div className="flex flex-col">
+            <MenuBar/>
+            <Editor/>
+        </div>
+
     )
 }
